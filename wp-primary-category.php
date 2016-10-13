@@ -62,7 +62,6 @@ class Primary_Category_Widget extends WP_Widget{
 		} else{
 			$search_term = null;
 		}
-
 		// outputs the content of the widget
 		$content = '<h4 class="widgettitle">Primary Categories</h4>';
 		$content .=  '<form id="category-select" class="category-select postform " action="'.esc_url( home_url( '/' ) ).'" method="get">';
@@ -138,22 +137,3 @@ add_action('wp_enqueue_scripts', 'primary_category_public_scripts' ); // add our
 add_action('widgets_init', function(){ register_widget('Primary_Category_Widget'); }); // init the dropdown menu
 add_action('pre_get_posts', 'primary_category_search'); // init our cusotm archive search 
 
-/*
-notes and resources...
-https://codex.wordpress.org/Post_Types
-https://codex.wordpress.org/Widgets_API
-https://codex.wordpress.org/Plugin_API/Action_Reference/pre_get_posts
-https://wordpress.stackexchange.com/questions/86864/using-1-taxonomy-for-multiple-post-types
-http://sudarmuthu.com/blog/creating-single-select-wordpress-taxonomies/
-https://frankiejarrett.com/2011/09/create-a-dropdown-of-custom-taxonomies-in-wordpress-the-easy-way/
-http://kellenmace.com/create-a-taxonomy-dropdown-in-wordpress/
-https://github.com/WebDevStudios/Taxonomy_Single_Term
-https://wpshout.com/why-when-and-how-to-make-your-own-template-tags/
-https://wordpress.stackexchange.com/questions/17385/custom-post-type-templates-from-plugin-folder
-https://codex.wordpress.org/Function_Reference/wp_get_post_terms	
-http://www.wpbeginner.com/plugins/how-to-display-custom-taxonomy-terms-in-wordpress-sidebar-widgets/
-https://wordpress.stackexchange.com/questions/112891/how-to-filter-by-custom-post-type-in-taxonomy-archive-pages
-https://stackoverflow.com/questions/9961192/how-to-programmatically-fetch-posts-matching-a-search-query-in-wordpress
-http://www.billerickson.net/customize-the-wordpress-query/
-https://www.smashingmagazine.com/2014/08/customizing-wordpress-archives-categories-terms-taxonomies/
-*/
