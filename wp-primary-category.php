@@ -64,7 +64,7 @@ class Primary_Category_Widget extends WP_Widget{
 		}
 		// outputs the content of the widget
 		$content = '<h4 class="widgettitle">Primary Categories</h4>';
-		$content .=  '<form id="category-select" class="category-select postform " action="'.esc_url( home_url( '/' ) ).'" method="get">';
+		$content .= '<form id="category-select" class="category-select postform " action="'.esc_url( home_url( '/' ) ).'" method="get">';
 		$content .= '<input type="text" class="form-control" value="'.$search_term.'" name="search_term" placeholder="search">';
 		$content .= primary_category_dropdown();
 		$content .= '</form>';
@@ -81,7 +81,7 @@ function primary_category_search($query){
 		//limit the filter to front end, main query and archive pages
 		if($query->is_main_query() && !is_admin() && $query->is_archive ) {
 			$query->set('s', sanitize_text_field($_GET['search_term']));
-       }
+		}
 	}
 }
 
@@ -116,7 +116,6 @@ multiple-select. Looked at a few ways to handle this but the most compact and st
 seems to be to use a bit of jQuery to convert the check boxes into a set of radio buttons
 note - this could get unweildy if there are tons of categories ...
 */
-
 function primary_category_admin_scripts() {
     wp_enqueue_script( 'primary-category-admin-script', plugin_dir_url( __FILE__ ) . 'js/admin.js', array( 'jquery' ), false, true );
 }
